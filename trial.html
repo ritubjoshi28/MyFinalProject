@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/3120c55b15.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      button {
+        background-color: transparent;
+        border: none; /* Remove borders */
+        color: black; /* White text */
+        padding: 12px 16px; /* Some padding */
+        font-size: 16px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="search-form">
+        <input type="=text" id="look-input" placeholder="Enter city the name" />
+        <input type="submit" id="close=input" value="Search" />
+        <button><i class="fa-solid fa-location-dot fabulous"></i></button>
+      </form>
+
+      <h1 id="dream">Paris</h1>
+      <h1 id="celcius">19°C</h1>
+      <h4>Humidity:50%</h4>
+      <h5>Wind:20km/h</h5>
+    </div>
+    <div>
+      <h3>morning</h3>
+      <h3>Noon</h3>
+      <h3>evening</h3>
+      <h3>night</h3>
+    </div>
+  </body>
+  <script>
+    function showCity(response) {
+      console.log(response.data);
+      document.querySelector("#dream").innerHTML = response.data.name;
+      document.querySelector("#celcius").innerHTML = `${Math.round(
+        response.data.main.temp
+      )}°C`;
+      document.querySelector(
+        "h4"
+      ).innerHTML = `Humidity ${response.data.main.humidity}%`;
+      document.querySelector("h5").innerHTML = `Wind speed:${Math.round(
+        response.data.wind.speed
+      )}`;
+    }
+    function showTemperature(event) {
+      event.preventDefault();
+      let apiKey = "dd148c52602d8cdd859f994ef40ed094";
+      let searchInput = document.querySelector("#look-input");
+      let city = searchInput.value;
+      let units = "metric";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+      axios.get(apiUrl).then(showCity);
+    }
+    function dayforecast(event) {
+      event.preventDefault();
+      let longitude;
+      let dailyApikey = "dd148c52602d8cdd859f994ef40ed094";
+      let dailyApiUrl =
+        "https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}";
+    }
+
+    let form = document.querySelector("#search-form");
+    form.addEventListener("submit", showTemperature);
+
+    function showPosition(position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      let geoApiKey = "dd148c52602d8cdd859f994ef40ed094";
+      let unit = "metric";
+      let geoApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${geoApiKey}&units=${unit}`;
+      let say = alert(`your latitude is${position.coords.latitude}`);
+      console.log(position.coords.latitude);
+      console.log(position.coords.latitude);
+      axios.get(geoApiUrl).then(showCity);
+    }
+    function getCurrentPosition() {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+
+    let button = document.querySelector("button");
+    button.addEventListener("click", getCurrentPosition);
+  </script>
+</html>
