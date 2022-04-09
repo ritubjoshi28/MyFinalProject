@@ -37,8 +37,8 @@ function showFereniteTemperature(event) {
 }
 function displaycelTemperature(event) {
   event.preventDefault();
-  let celciusTemperature = document.querySelector("h1");
-  celciusTemperature.innerHTML = displaycelcius;
+  let celciusTemperature = document.querySelector("#celcius");
+  celciusTemperature.innerHTML = Math.round(displaycelcius);
 }
 let displaycelcius = null;
 
