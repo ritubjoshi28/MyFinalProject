@@ -14,7 +14,7 @@ function showCity(response) {
     .querySelector("#icons")
     .setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
   displaycelcius = response.data.main.temp;
