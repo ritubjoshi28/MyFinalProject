@@ -7,11 +7,7 @@ button {
   cursor: pointer; /* Mouse pointer on hover */
   display: inline;
 }
-div {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
+
 #units {
   display: inline;
 }
@@ -28,12 +24,54 @@ h1 {
   position: relative;
   font-size: 20px;
   top: -10px;
+  text-align: center;
 }
-img {
-  display: block;
+#icons {
+  display: inline;
   margin: 0 auto;
 }
 .abc {
-  background-color: lightyellow;
-  width: 400px;
+  background-color: transparent;
+  width: 500px;
+  border: 2px solid lightgray;
+}
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  line-height: 1px;
+  opacity: 70%;
+}
+#units-container {
+  text-align: center;
+}
+#look-input {
+  width: 200px;
+  margin-left: 10px;
+}
+h1,
+h3,
+h4,
+h5 {
+  margin-left: 15px;
+}
+#col-img {
+  display: block;
+}
+.weather-forecast {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+.weather-forecast-dates {
+  font-size: 14px;
+}
+.weather-forecast-temperatures {
+  font-size: 12px;
+}
+.weather-forecast-temperature-min {
+  opacity: 50%;
+}
+.col-2 {
+  display: inline-block;
 }
