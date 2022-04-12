@@ -44,6 +44,7 @@ h5 {
 }
 #units-container {
   text-align: center;
+  padding: 30px;
 }
 #look-input {
   width: 200px;
@@ -59,7 +60,8 @@ h5 {
   display: block;
 }
 .weather-forecast {
-  margin-left: 10px;
+  margin-left: 130px;
+  margin-right: 100px;
   margin-bottom: 10px;
   line-height: 20px;
 }
@@ -74,4 +76,5 @@ h5 {
 }
 .col-2 {
   display: inline-block;
+  padding: 10px 5px;
 }

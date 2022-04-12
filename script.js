@@ -1,3 +1,31 @@
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="weather-forecast-dates">
+              ${day}
+              <img
+                id="col-img"
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                width="30px"
+              />
+              <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max">18°</span>
+                <span class="weather-forecast-temperature-min">12°</span>
+              </div>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showCity(response) {
   //console.log(response.data);
   document.querySelector("#dream").innerHTML = response.data.name;
@@ -68,3 +96,5 @@ fereiniteElement.addEventListener("click", showFereniteTemperature);
 
 let cellElement = document.querySelector("#merits");
 cellElement.addEventListener("click", displaycelTemperature);
+
+displayForecast();
