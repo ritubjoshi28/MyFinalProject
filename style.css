@@ -32,22 +32,26 @@ h1 {
 }
 .abc {
   background-color: transparent;
-  width: 500px;
+  background-image: url(https://cdn.dribbble.com/users/13449/screenshots/6498887/lakeside_2019.gif);
+  width: 650px;
   border: 2px solid lightgray;
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 h3,
 h4,
 h5 {
   font-weight: normal;
   line-height: 1px;
-  opacity: 70%;
 }
 #units-container {
   text-align: center;
   padding: 30px;
 }
 #look-input {
-  width: 200px;
+  width: 250px;
   margin-left: 10px;
 }
 h1,
@@ -66,15 +70,27 @@ h5 {
   line-height: 20px;
 }
 .weather-forecast-dates {
-  font-size: 14px;
+  font-size: 20px;
 }
 .weather-forecast-temperatures {
-  font-size: 12px;
+  font-size: 14px;
+  color: white;
 }
 .weather-forecast-temperature-min {
   opacity: 50%;
+  color: white;
 }
 .col-2 {
   display: inline-block;
-  padding: 10px 5px;
+  padding: 10px 10px;
+}
+.fortemp {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+#merits,
+#farenheit-link {
+  color: white;
 }

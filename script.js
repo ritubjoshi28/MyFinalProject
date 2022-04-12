@@ -1,22 +1,38 @@
-function displayForecast() {
+function formateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let force = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thur", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  // let days = ["Thur", "Fri", "Sat", "Sun"];
+  force.forEach(function (forceDay, index) {
+    if (index < 5)
+      forecastHTML =
+        forecastHTML +
+        `
           <div class="col-2">
             <div class="weather-forecast-dates">
-              ${day}
+              ${formateDay(forceDay.dt)}
+            
               <img
                 id="col-img"
-                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                src="https://openweathermap.org/img/wn/${
+                  forceDay.weather[0].icon
+                }@2x.png"
                 width="30px"
               />
               <div class="weather-forecast-temperatures">
-                <span class="weather-forecast-temperature-max">18°</span>
-                <span class="weather-forecast-temperature-min">12°</span>
+                <span class="weather-forecast-temperature-max">${Math.round(
+                  forceDay.temp.max
+                )}°</span>
+                <span class="weather-forecast-temperature-min">${Math.round(
+                  forceDay.temp.min
+                )}°</span>
               </div>
             </div>
           </div>`;
@@ -26,8 +42,16 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForce(coordinates) {
+  console.log(coordinates);
+  let celunit = "metric";
+  let apiKey = "dd148c52602d8cdd859f994ef40ed094";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${celunit}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showCity(response) {
-  //console.log(response.data);
+  console.log(response.data);
   document.querySelector("#dream").innerHTML = response.data.name;
   document.querySelector("#celcius").innerHTML = `${Math.round(
     response.data.main.temp
@@ -46,6 +70,7 @@ function showCity(response) {
     );
   document.querySelector("h3").innerHTML = response.data.weather[0].description;
   displaycelcius = response.data.main.temp;
+  getForce(response.data.coord);
 }
 function showTemperature(event) {
   event.preventDefault();
@@ -89,12 +114,10 @@ function getCurrentPosition() {
 }
 
 let button = document.querySelector("button");
-button.addEventListener("click", getCurrentPosition);
+button.addEventListener("click", getCurrentPosition, displayForecast);
 
 let fereiniteElement = document.querySelector("#farenheit-link");
 fereiniteElement.addEventListener("click", showFereniteTemperature);
 
 let cellElement = document.querySelector("#merits");
 cellElement.addEventListener("click", displaycelTemperature);
-
-displayForecast();
