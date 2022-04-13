@@ -132,7 +132,7 @@ function getCurrentPosition() {
 
 let button = document.querySelector("#pin");
 button.addEventListener("click", getCurrentPosition);
-button.addEventListener("click", displayForecast);
+button.addEventListener("click", getForce);
 
 let fereiniteElement = document.querySelector("#farenheit-link");
 fereiniteElement.addEventListener("click", showFereniteTemperature);
@@ -143,4 +143,4 @@ cellElement.addEventListener("click", displaycelTemperature);
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showTemperature);
 
-search("Apple valley");
+search("Sydney");
