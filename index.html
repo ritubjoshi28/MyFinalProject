@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <script
       src="https://kit.fontawesome.com/3120c55b15.js"
       crossorigin="anonymous"
@@ -9,6 +18,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <div class="abc">
       <form id="search-form">
         <input type="=text" id="look-input" placeholder="Enter city the name" />
@@ -19,7 +29,10 @@
       </form>
 
       <h1 id="dream">Paris</h1>
-
+      <p id="today">
+      Last Updated
+      <h6>Tuesday 10:00</h6>
+      </p>
       <div id="units-container">
         <img
           src="https://openweathermap.org/img/wn/10d@2x.png"
@@ -118,9 +131,12 @@
           </div>
         </form>
       </div>
+      
     </div>
-    <a href="https://github.com/ritubjoshi28/Mytrialcode">Open source code</a>
-    by Ritu Joshi
+    <div id="sourceLink">
+    <span >
+    <a href="https://github.com/ritubjoshi28/Mytrialcode"  target="blanke">Open source code</a>
+    by Ritu Joshi</span></div>
   </body>
   <script src="script.js"></script>
 </html>

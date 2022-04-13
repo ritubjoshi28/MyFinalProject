@@ -33,7 +33,7 @@ h1 {
 .abc {
   background-color: #48465c;
   height: 500px;
-  width: 650px;
+  width: 600px;
   border: 2px solid lightgray;
   display: block;
   margin: 0 auto;
@@ -44,7 +44,6 @@ h3,
 h4,
 h5 {
   font-weight: normal;
-  line-height: 1px;
 }
 #units-container {
   text-align: center;
@@ -52,9 +51,9 @@ h5 {
   margin-top: -20px;
 }
 #look-input {
-  width: 300px;
+  width: 400px;
   margin-left: 20px;
-  height: 20px;
+  height: 30px;
 }
 h1,
 h3,
@@ -66,8 +65,8 @@ h5 {
   display: block;
 }
 .weather-forecast {
-  margin-left: 130px;
-  margin-right: 100px;
+  margin-left: 150px;
+  margin-right: 150px;
   margin-bottom: 10px;
   line-height: 20px;
 }
@@ -89,8 +88,6 @@ h5 {
 .fortemp {
   text-align: center;
   display: block;
-  margin: 0 auto;
-  width: fit-content;
 }
 #merits,
 #farenheit-link {
@@ -99,4 +96,38 @@ h5 {
 }
 #pin {
   color: white;
+}
+.row {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+h3::first-letter {
+  text-transform: capitalize;
+}
+h4,
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 12px;
+  padding: 0;
+  line-height: 1px;
+  margin-left: 15px;
+}
+#today {
+  padding: 0;
+  margin-left: 15px;
+  line-height: none;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+h3 {
+  font-size: 18px;
+}
+#sourceLink {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
 }
