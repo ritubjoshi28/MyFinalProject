@@ -31,8 +31,8 @@ h1 {
   margin: 0 auto;
 }
 .abc {
-  background-color: transparent;
-  background-image: url(https://cdn.dribbble.com/users/13449/screenshots/6498887/lakeside_2019.gif);
+  background-color: #48465c;
+  height: 500px;
   width: 650px;
   border: 2px solid lightgray;
   display: block;
@@ -49,10 +49,12 @@ h5 {
 #units-container {
   text-align: center;
   padding: 30px;
+  margin-top: -20px;
 }
 #look-input {
-  width: 250px;
-  margin-left: 10px;
+  width: 300px;
+  margin-left: 20px;
+  height: 20px;
 }
 h1,
 h3,
@@ -92,5 +94,9 @@ h5 {
 }
 #merits,
 #farenheit-link {
+  color: white;
+  text-decoration: none;
+}
+#pin {
   color: white;
 }
