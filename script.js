@@ -1,7 +1,14 @@
 function rightNow() {
   let now = new Date();
-  let days = ["Sunday", "Monday", "Tuesday", "Wedensday", "Friday", "saturday"];
-  let currentDay = days[now.getDay()];
+  let today = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wedensday",
+    "Friday",
+    "saturday",
+  ];
+  let currentDay = today[now.getDay()];
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
