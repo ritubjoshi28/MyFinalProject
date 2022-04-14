@@ -18,7 +18,7 @@ rightNow();
 function formateDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+  let days = ["Sun", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
   return days[day];
 }
 
