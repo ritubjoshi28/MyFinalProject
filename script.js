@@ -1,12 +1,12 @@
 function rightNow() {
   let now = new Date();
   let today = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wedensday",
     "Friday",
     "saturday",
+    "Sunday",
   ];
   let currentDay = today[now.getDay()];
   let hours = now.getHours();
